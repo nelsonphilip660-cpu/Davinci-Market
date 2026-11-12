@@ -1,0 +1,244 @@
+:root {
+    --purple: #7545e8;
+    --gold: #f5c451;
+    --dark: #090b16;
+    --card: #121629;
+    --muted: #a7abc0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--dark);
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.checkout-header {
+    padding: 20px 7%;
+    background: #101326;
+    border-bottom: 1px solid #292d45;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkout-brand .brand-logo { width:96px; height:64px; object-fit:contain; vertical-align:middle; margin-right:8px; }
+
+.back-link {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.checkout-container {
+    width: min(1100px, 90%);
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.checkout-form-section,
+.order-summary {
+    background: var(--card);
+    border: 1px solid #292d45;
+    border-radius: 14px;
+    padding: 28px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.checkout-form-section h1 {
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.muted {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+form h2,
+.order-summary h2 {
+    font-size: 20px;
+    margin: 28px 0 18px;
+}
+
+form label:not(.payment-option) {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 14px;
+}
+
+form input:not([type="radio"]),
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #0c1020;
+    border: 1px solid #343953;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    font: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--purple);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+.payment-title {
+    margin-top: 30px;
+}
+
+.payment-option {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+    margin: 12px 0;
+    background: #0c1020;
+    border: 1px solid #343953;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.payment-option input {
+    margin-top: 4px;
+    accent-color: var(--purple);
+}
+
+.payment-option span {
+    display: grid;
+    gap: 6px;
+}
+
+.payment-option small {
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.bank-details {
+    padding: 18px;
+    margin-top: 18px;
+    border: 1px solid #80622a;
+    border-radius: 10px;
+    background: #292313;
+}
+
+.bank-details h3 {
+    color: var(--gold);
+    margin-top: 0;
+}
+
+.bank-details p {
+    line-height: 1.5;
+}
+
+.bank-details small {
+    display: block;
+    color: #e4d6b3;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.place-order {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.place-order:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.checkout-message {
+    line-height: 1.5;
+    color: var(--gold);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #343953;
+    color: var(--muted);
+}
+
+.summary-item strong {
+    color: white;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 20px;
+    margin-top: 15px;
+    border-top: 1px solid #343953;
+    font-size: 19px;
+}
+
+.summary-total strong {
+    color: var(--gold);
+}
+
+@media (max-width: 800px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        margin: 25px auto;
+    }
+
+    .checkout-form-section,
+    .order-summary {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .checkout-header {
+        padding: 17px 5%;
+    }
+
+    .checkout-brand {
+        font-size: 16px;
+    }
+
+    .back-link {
+        font-size: 13px;
+    }
+
+    .checkout-form-section h1 {
+        font-size: 26px;
+    }
+}
